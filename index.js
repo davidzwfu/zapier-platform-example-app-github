@@ -1,8 +1,9 @@
 const repoTrigger = require('./triggers/repo');
 const issueCreate = require('./creates/issue');
 const issueTrigger = require('./triggers/issue');
+const signatureTrigger = require('./triggers/signature');
 const {
-  config: authentication,
+  authentication,
   befores = [],
   afters = [],
 } = require('./authentication');
@@ -26,6 +27,7 @@ const App = {
   triggers: {
     [repoTrigger.key]: repoTrigger,
     [issueTrigger.key]: issueTrigger,
+    [signatureTrigger.key]: signatureTrigger,
   },
 
   // If you want your searches to show up, you better include it here!
